@@ -20,4 +20,6 @@ group :test do
    gem 'ffaker'
 end
 
+gem 'data_migrate'
+
 gemspec
