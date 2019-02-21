@@ -1,0 +1,15 @@
+<!-- replace 'p[id*="address1"]'-->
+<% if ENV.fetch('ENABLE_AUTOCOMPLETE', false) %>
+	<p class="field big-field" id=<%="#{address_id}address1" %>>
+  	<%= form.label :address1, t('checkout_form.address'), class: 'form-label' %>
+    <%= text_field :address, :autocomplete, class: 'required big-input', value: form.object.raw_address, autocomplete: 'off', required: true, onFocus: "geolocate()" %>
+    <%= form.hidden_field :raw_address, required: true %>
+    <%= field_error_message(address, :address1) %>
+  </p>
+<% end %>
+
+<p class="field big-field" id=<%="#{address_id}address1" %>>
+	<%= form.label :address1, t('checkout_form.street'), class: 'form-label' %>
+	<%= form.text_field :address1, class: 'required big-input', required: true %>
+	<%= field_error_message(address, :address1) %>
+</p>

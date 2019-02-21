@@ -1,0 +1,5 @@
+<!-- insert_after 'div:last-child, p:last-child' -->
+<% if ENV.fetch('ENABLE_AUTOCOMPLETE', false) %>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY']-%>&libraries=places&callback=initAddressAutocomplete&region=MX&language=es"
+          async defer></script>
+<% end %>
