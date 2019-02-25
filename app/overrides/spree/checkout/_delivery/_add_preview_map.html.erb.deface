@@ -1,0 +1,2 @@
+<!-- insert_top 'fieldset#shipping_method' -->
+<%= render 'spree/checkout/delivery/delivery_information', order: @order %>

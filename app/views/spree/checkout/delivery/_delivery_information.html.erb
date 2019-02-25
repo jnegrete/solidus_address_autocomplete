@@ -1,0 +1,12 @@
+<div class="delivery-information-card">
+  <div class="deliver-info item">
+    <%= render partial: 'spree/shared/address', locals: {address: order.ship_address} %>
+    <%= link_to t('spree.edit_address'), checkout_state_path(:address, edit_address: true), class: 'delivery-link' %>
+  </div>
+  <div class="delivery-map item">
+    <% if ENV.fetch('ENABLE_AUTOCOMPLETE', false) %>
+      <iframe width="365" height="300" frameborder="0" style="border:0"
+              src="https://www.google.com/maps/embed/v1/place?q=<%= order.ship_address.raw_address -%>&key=<%= ENV['GOOGLE_MAPS_API_KEY']-%>"></iframe>
+    <% end %>
+  </div>
+</div>
